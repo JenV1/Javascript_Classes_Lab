@@ -30,4 +30,15 @@ describe('dealership method tests', () => {
         dealership.addCarToStock(addedCar);
         expect(dealership.countCarsInStock()).toBe(3);
     })
+
+    test('check return all manufacturers function', () => {
+        expect(dealership.returnAllCarManufacturers()).toStrictEqual(
+            ["BMW", "Ford", "BMW"]);
+    })
+
+    test('check return all cars of a given manufacturer function', () => {
+        expect(dealership.findAllCarsWithCertainManufacturer("BMW")).toStrictEqual(
+            [myCar, addedCar]
+        );
+    })
 })
