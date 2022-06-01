@@ -71,3 +71,28 @@ describe('customer class method checks', () => {
         expect(dealership.carsInStock.includes(myCar)).toBeFalse;
     })
 })
+
+describe('search by tests', () => {
+
+    test('searching by manufacturer', () => {
+        expect(dealership.findAllCarsBySomething("manufacturer", "Ford")).toStrictEqual(
+        [theirCar]);
+    })
+
+    test('searching by engine type', () => {
+        expect(dealership.findAllCarsBySomething("engineType", "Super 3000")).toStrictEqual(
+            [addedCar]);
+    })
+
+    test('searching by price', () => {
+        expect(dealership.findAllCarsBySomething("price", 1000)).toStrictEqual(
+            [theirCar])
+    })
+
+    test('returns nothing when not existent', () => {
+        expect(dealership.findAllCarsBySomething("manufacturer", "Tesla")).toStrictEqual(
+            []
+        );
+    })
+
+})

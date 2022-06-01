@@ -26,6 +26,11 @@ class Dealership {
              element.manufacturer === manufacturer);
     }
 
+    findAllCarsBySomething(attribute, value) {
+        return this.carsInStock.filter(element => 
+            element[attribute] === value );
+    }
+
     totalValueOfCars() {
         const initialValue = 0;
         const priceArray = this.carsInStock.map(element => element.price);
