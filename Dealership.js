@@ -11,7 +11,9 @@ class Dealership {
     }
 
     addCarToStock(car) {
-        this.carsInStock.push(car);
+        if (this.countCarsInStock() < this.maxCarsItCanContain) {
+            this.carsInStock.push(car);
+        }
     }
 
     returnAllCarManufacturers() {
@@ -33,8 +35,6 @@ class Dealership {
         
     }
 }
-
-
 
 
 module.exports = Dealership;
