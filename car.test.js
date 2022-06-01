@@ -41,4 +41,8 @@ describe('dealership method tests', () => {
             [myCar, addedCar]
         );
     })
+
+    test('check total values of cars function', () => {
+        expect(dealership.totalValueOfCars()).toBe(16000);
+    })
 })

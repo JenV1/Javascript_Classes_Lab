@@ -23,6 +23,15 @@ class Dealership {
         return this.carsInStock.filter(element =>
              element.manufacturer === manufacturer);
     }
+
+    totalValueOfCars() {
+        const initialValue = 0;
+        const priceArray = this.carsInStock.map(element => element.price);
+        return priceArray.reduce(
+            (previousValue, currentValue) => currentValue + previousValue,
+             initialValue);
+        
+    }
 }
 
 
